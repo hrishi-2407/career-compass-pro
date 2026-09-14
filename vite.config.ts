@@ -3,6 +3,8 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 const isGitHubActions = process.env.GITHUB_ACTIONS === "true";
 
 export default defineConfig({
+  base: isGitHubActions ? "/career-compass-pro/" : "/",
+
   ...(isGitHubActions
     ? {
         nitro: false,
