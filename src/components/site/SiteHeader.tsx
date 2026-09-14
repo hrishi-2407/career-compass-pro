@@ -2,13 +2,14 @@ import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { siteHref } from "@/lib/site-url";
 
 const nav = [
-  { label: "Services", href: "/#services" },
-  { label: "Process", href: "/#process" },
-  { label: "Success Stories", href: "/#testimonials" },
-  { label: "FAQ", href: "/#faq" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Services", href: siteHref("#services") },
+  { label: "Process", href: siteHref("#process") },
+  { label: "Success Stories", href: siteHref("#testimonials") },
+  { label: "FAQ", href: siteHref("#faq") },
+  { label: "Contact", href: siteHref("#contact") },
 ];
 
 export function SiteHeader() {
@@ -31,7 +32,7 @@ export function SiteHeader() {
         </nav>
         <div className="hidden items-center gap-2 md:flex">
           <Link to="/submit-review"><Button variant="ghost" size="sm">Share your story</Button></Link>
-          <a href="/#contact"><Button size="sm" className="gradient-brand text-primary-foreground shadow-elegant hover:opacity-95">Book free consult</Button></a>
+          <a href={siteHref("#contact")}><Button size="sm" className="gradient-brand text-primary-foreground shadow-elegant hover:opacity-95">Book free consult</Button></a>
         </div>
         <button className="md:hidden" onClick={() => setOpen(!open)} aria-label="Toggle menu">
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -46,7 +47,7 @@ export function SiteHeader() {
               </a>
             ))}
             <Link to="/submit-review" onClick={() => setOpen(false)} className="rounded-md px-3 py-2 text-sm font-medium hover:bg-muted">Share your story</Link>
-            <a href="/#contact" onClick={() => setOpen(false)} className="mt-2 rounded-md gradient-brand px-3 py-2 text-center text-sm font-semibold text-primary-foreground">Book free consult</a>
+            <a href={siteHref("#contact")} onClick={() => setOpen(false)} className="mt-2 rounded-md gradient-brand px-3 py-2 text-center text-sm font-semibold text-primary-foreground">Book free consult</a>
           </div>
         </div>
       )}

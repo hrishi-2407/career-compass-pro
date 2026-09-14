@@ -11,6 +11,9 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { supabase } from "@/integrations/supabase/client";
+import { productionSiteUrl } from "@/lib/site-url";
+
+const submitReviewUrl = `${productionSiteUrl}submit-review/`;
 
 export const Route = createFileRoute("/submit-review")({
   component: SubmitReview,
@@ -19,9 +22,9 @@ export const Route = createFileRoute("/submit-review")({
       { title: "Share your story — AscendUS" },
       { name: "description", content: "Submit a review of your job-search journey with AscendUS. Published only with your explicit consent." },
       { property: "og:title", content: "Share your story — AscendUS" },
-      { property: "og:url", content: "/submit-review" },
+      { property: "og:url", content: submitReviewUrl },
     ],
-    links: [{ rel: "canonical", href: "/submit-review" }],
+    links: [{ rel: "canonical", href: submitReviewUrl }],
   }),
 });
 

@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Sparkles, ArrowLeft } from "lucide-react";
+import { siteHref } from "@/lib/site-url";
 
 export const Route = createFileRoute("/auth")({
   component: AuthPage,
@@ -49,7 +50,7 @@ function AuthPage() {
         : await supabase.auth.signUp({
             ...parsed.data,
             options: {
-              emailRedirectTo: window.location.origin + "/admin",
+              emailRedirectTo: new URL(siteHref("admin/"), window.location.origin).toString(),
             },
           });
 

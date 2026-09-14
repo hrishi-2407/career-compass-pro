@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Sparkles, Linkedin, Mail, Phone } from "lucide-react";
+import { siteHref } from "@/lib/site-url";
 
 export function SiteFooter() {
   return (
@@ -19,17 +20,17 @@ export function SiteFooter() {
         <FooterCol
           title="Company"
           links={[
-            { label: "About", href: "/#about" },
-            { label: "Services", href: "/#services" },
-            { label: "Success Stories", href: "/#testimonials" },
-            { label: "FAQ", href: "/#faq" },
+            { label: "About", href: siteHref("#about") },
+            { label: "Services", href: siteHref("#services") },
+            { label: "Success Stories", href: siteHref("#testimonials") },
+            { label: "FAQ", href: siteHref("#faq") },
           ]}
         />
         <FooterCol
           title="Resources"
           links={[
             { label: "Share your story", href: "/submit-review" },
-            { label: "Book consultation", href: "/#contact" },
+            { label: "Book consultation", href: siteHref("#contact") },
             // { label: "Admin", href: "/admin" },
           ]}
         />
@@ -82,13 +83,13 @@ export function SiteFooter() {
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 py-6 text-xs text-muted-foreground sm:flex-row sm:px-6 lg:px-8">
           <div>© {new Date().getFullYear()} AscendUS. All rights reserved.</div>
           <div className="flex gap-6">
-            <a href="/#" className="hover:text-foreground">
+            <a href={siteHref()} className="hover:text-foreground">
               Privacy
             </a>
-            <a href="/#" className="hover:text-foreground">
+            <a href={siteHref()} className="hover:text-foreground">
               Terms
             </a>
-            <a href="/#contact" className="hover:text-foreground">
+            <a href={siteHref("#contact")} className="hover:text-foreground">
               Contact
             </a>
           </div>
@@ -105,7 +106,7 @@ function FooterCol({ title, links }: { title: string; links: { label: string; hr
       <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
         {links.map((l) => (
           <li key={l.href}>
-            {l.href.startsWith("/#") || l.href.startsWith("#") ? (
+            {l.href.includes("#") ? (
               <a href={l.href} className="hover:text-foreground">
                 {l.label}
               </a>

@@ -1,6 +1,6 @@
 User-agent: *
-Allow: /
-Disallow: /admin
-Disallow: /auth
+Allow: /career-compass-pro/
+Disallow: /career-compass-pro/admin/
+Disallow: /career-compass-pro/auth/
 
-Sitemap: https://hrishisav.xyz/sitemap.xml
+Sitemap: https://hrishi-2407.github.io/career-compass-pro/sitemap.xml

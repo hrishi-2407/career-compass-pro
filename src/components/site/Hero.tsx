@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Star, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link } from "@tanstack/react-router";
+import { siteHref } from "@/lib/site-url";
 
 export function Hero() {
   return (
@@ -37,7 +37,7 @@ export function Hero() {
             interviews, not spreadsheets.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <a href="/#contact">
+            <a href={siteHref("#contact")}>
               <Button
                 size="lg"
                 className="gradient-brand h-12 px-6 text-primary-foreground shadow-elegant hover:opacity-95"
@@ -45,7 +45,7 @@ export function Hero() {
                 Book a free consultation <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </a>
-            <a href="/#testimonials">
+            <a href={siteHref("#testimonials")}>
               <Button size="lg" variant="outline" className="h-12 px-6 backdrop-blur">
                 Read success stories
               </Button>

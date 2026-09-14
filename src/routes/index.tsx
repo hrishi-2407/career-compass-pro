@@ -10,12 +10,13 @@ import { WhyChoose } from "@/components/site/WhyChoose";
 import { Testimonials } from "@/components/site/Testimonials";
 import { Faq } from "@/components/site/Faq";
 import { Contact } from "@/components/site/Contact";
+import { productionSiteUrl } from "@/lib/site-url";
 
 export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
-    links: [{ rel: "canonical", href: "/" }],
-    meta: [{ property: "og:url", content: "/" }],
+    links: [{ rel: "canonical", href: productionSiteUrl }],
+    meta: [{ property: "og:url", content: productionSiteUrl }],
   }),
 });
 
