@@ -14,7 +14,7 @@ if (isGitHubActions && (!supabaseUrl || !supabasePublishableKey)) {
 
 export default defineConfig({
   vite: {
-    base: isGitHubActions ? "/career-compass-pro/" : "/",
+    base: "/",
   },
 
   ...(isGitHubActions
