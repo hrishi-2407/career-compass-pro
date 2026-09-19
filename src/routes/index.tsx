@@ -16,7 +16,6 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     links: [{ rel: "canonical", href: productionSiteUrl }],
-    meta: [{ property: "og:url", content: productionSiteUrl }],
   }),
 });
 
